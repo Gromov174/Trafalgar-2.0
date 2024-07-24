@@ -1,0 +1,65 @@
+.suppliers {
+  position: relative;
+  padding-bottom: 200px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 450px;
+    right: -375px;
+    width: 132px;
+    height: 115px;
+    z-index: -1;
+    background: url('../content/BackgroundElements/dots_3.svg') 0 0 / 100% 100% no-repeat;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 140px;
+
+    @include tablet {
+      flex-direction: column;
+      text-align: center;
+      gap: 70px;
+    }
+    @include mini-phone {
+      gap: 0px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 650px;
+    min-width: 500px;
+
+    @include tablet {
+      min-width: 0;
+    }
+  }
+
+  &__content {
+    &-title {
+      @include fontcalc(36px);
+      font-weight: 700px;
+      line-height: 155.556%;
+    }
+
+    &-text {
+      @include fontcalc(18px);
+      font-weight: 300px;
+      line-height: 166.667%;
+      margin-bottom: 35px;
+      color: var(--font-second-color);
+    }
+
+  }
+
+  &__separator {
+    @include tablet {
+      margin: 25px auto 30px;
+    }
+  }
+
+}

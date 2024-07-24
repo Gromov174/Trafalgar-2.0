@@ -1,0 +1,128 @@
+.services {
+  position: relative;
+  padding-bottom: 200px;
+
+  &__blob {
+    position: absolute;
+    top: 220px;
+    left: -390px;
+    z-index: -1;
+    max-width: 100%;
+  }
+
+  &__dots {
+    position: absolute;
+    top: 520px;
+    right: -30px;
+    z-index: -1;
+    max-width: 100%;
+  }
+
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 220px;
+  //   left: -390px;
+  //   width: 945px;
+  //   height: 619px;
+  //   z-index: -1;
+  //   background: url('../content/BackgroundElements/blob_1.svg') 0 0 / 100% 100% no-repeat;
+  // }
+
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   top: 520px;
+  //   right: -30px;
+  //   width: 132px;
+  //   height: 115px;
+  //   z-index: -1;
+  //   background: url('../content/BackgroundElements/dots_2.svg') 0 0 / 100% 100% no-repeat;
+  // }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    @include large-tablet {
+      align-items: center;
+    }
+    justify-content: center;
+  }
+
+
+  &__content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 80px;
+
+    &-title {
+      @include fontcalc (36px);
+      font-weight: 700;
+      line-height: 155.556%;
+    }
+
+    &-text {
+      @include fontcalc (18px);
+      font-weight: 300;
+      line-height: 166.667%;
+      color: var(--font-second-color);
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 35px;
+    padding-bottom: 70px;
+  }
+
+  &__card {
+    display: inline-flex;
+    flex-flow: column;
+    padding: 40px 40px 40px 40px;
+    border-radius: 20px;
+    box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.40);
+    background: rgb(247, 247, 247);
+    max-width: 350px;
+    min-width: 0px;
+    transition: transform .3s;
+    cursor: pointer;
+
+    @include large-tablet {
+      align-items: center;
+      text-align: center;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &-inner {
+      max-width: 260px;
+    }
+
+    &-title {
+      @include fontcalc(24px);
+      font-weight: 700;
+      line-height: 233.333%;
+    }
+
+    &-text {
+      @include fontcalc(16px);
+      font-weight: 300px;
+      line-height: 175%;
+      color: var(--font-second-color);
+    }
+
+  }
+
+  &__btn {
+    display: flex;
+    align-self: center;
+    // max-width: 200px;
+  }
+
+}

@@ -1,0 +1,117 @@
+@import "vars";
+@import "fonts";
+
+html,
+body {
+  position: relative;
+  font-family: "Mulish", sans-serif;
+  overflow-x: hidden;
+  @include flexibleFont(1920);
+
+  @include desktop {
+    @include flexibleFont(1440);
+  }
+  @include small-desktop {
+    @include flexibleFont(1024);
+  }
+  @include large-tablet {
+    @include flexibleFont(922);
+  }
+  @include tablet {
+    @include flexibleFont(768);
+  }
+  @include large-phone {
+    @include flexibleFont(576);
+  }
+  @include phone {
+    @include flexibleFont(420);
+  }
+  @include mini-phone {
+    @include flexibleFont(320); 
+  }
+}
+
+.html {
+  &--noscroll {
+    overflow-y: hidden;
+  }
+}
+
+.wrapper {
+  max-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  
+}
+
+.container {
+  max-width: calc(1250px - 30px);
+  height: 100%;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.inner {
+  max-width: calc(1120px - 30px);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 55px;
+  @include fontcalc(18px);
+  font-weight: 700;
+  padding: 15px 40px;
+  background: var(--btn-color);
+  color: var(--btn-color);
+  transition: transform .3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &--empty {
+    background: transparent;
+    border: 1.4px solid #458FF6;
+  }
+}
+
+.separator {
+  width: 56px;
+  height: 3px;
+  border-radius: 5px;
+  background: #000;
+  margin: 25px 0 30px;
+}
+
+.title {
+  @include fontcalc(36px);
+  font-weight: 700px;
+  line-height: 155.556%;
+}
+
+.subtitle {
+  @include fontcalc(18px);
+  font-weight: 300px;
+  line-height: 166.667%;
+  margin-bottom: 35px;
+  color: var(--font-second-color);
+}
+
+// .overlay__menu {
+//   position: fixed;
+//   inset: 0;
+//   width: 100vw;
+//   background-color: #649dec;
+//   z-index: 9999;
+// }
+
+@import "header";
+@import "services";
+@import "suppliers";
+@import "mobileapps";
+@import "testimonials";
+@import "articles";
+@import "footer";

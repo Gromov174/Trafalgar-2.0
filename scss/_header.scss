@@ -1,0 +1,242 @@
+.header {
+  // position: relative;
+  padding-bottom: 150px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 170px;
+    left: -380px;
+    width: 132px;
+    height: 115px;
+    background: url("../content/BackgroundElements/dots_1.svg") 0 0 / 100% 100% no-repeat;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0 80px;
+
+    @include tablet {
+      justify-content: center;
+    }
+  }
+
+  &__logo-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &:hover .header__text {
+      color: var(--btn-color);
+    }
+
+    &:hover .header__circle {
+      background: #233348;
+    }
+  }
+
+  &__circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 41px;
+    height: 41px;
+    background: var(--btn-color);
+    border-radius: 50%;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #fff;
+    transition: background .3s;
+  }
+
+  &__text {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #233348;
+    transition: color .3s;
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 40px;
+    @include fontcalc(18px);
+    font-weight: 600;
+    color: var(--font-accent-color);
+    transition: transform .5s, opacity .5s;
+
+
+    @include tablet {
+      transform: translateX(100%);
+      opacity: 0;
+      width: 100vw;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
+      color: rgb(25, 41, 62);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      @include fontcalc(24px);
+      font-weight: 700;
+
+      &--active {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+
+    }
+
+    li {
+      transition: color .3s;
+
+      &:hover {
+        color: var(--font-hover);
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+    overflow: hidden;
+    z-index: 9999;
+    background: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
+
+    @include tablet {
+      display: block;
+    }
+
+
+    &-line,
+    &-line::before,
+    &-line::after {
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      border-radius: 10px;
+      background-color: rgb(62, 56, 56);
+      transition: transform .3s ease-in, background .2s ease-out;
+    }
+
+    &-line {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &::after {
+        content: '';
+        top: 8px;
+      }
+
+      &::before {
+        content: '';
+        top: -8px;
+      }
+    }
+
+    &-line--active {
+      background-color: transparent;
+      transform: translate(-50%, -50%) rotate(.25turn);
+
+      &::before {
+        content: '';
+        top: 0px;
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        content: '';
+        top: 0px;
+        transform: rotate(45deg);
+      }
+    }
+
+  }
+
+
+  &__hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 110px;
+
+    @include tablet {
+      flex-flow: column-reverse;
+      gap: 0;
+    }
+  }
+
+  &__content {
+    max-width: 445px;
+
+    @include mini-phone {
+      max-width: 345px;
+    }
+
+    @include tablet {
+      padding-top: 50px;
+    }
+
+    @include tablet {
+      text-align: center
+    }
+
+    &-title {
+      @include fontcalc(90px);
+      font-weight: 700;
+      line-height: 116.667%;
+      color: var(--title-color);
+      margin-bottom: 25px;
+
+      @include phone {
+        @include fontcalc(70px);
+      }
+
+      @include mini-phone {
+        @include fontcalc(50px);
+      }
+    }
+
+    &-text {
+      @include fontcalc(21px);
+      font-weight: 300;
+      line-height: 152.381%;
+      color: var(--font-second-color);
+      margin-bottom: 48px;
+
+      @include phone {
+        @include fontcalc(18px);
+      }
+
+      @include mini-phone {
+        @include fontcalc(18px);
+      }
+    }
+  }
+
+  &__btn {
+    color: #fff;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 673px;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include tablet {
+      width: 75%;
+    }
+  }
+}

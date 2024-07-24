@@ -1,0 +1,53 @@
+@mixin fonts($name, $weigth) {
+  @font-face {
+    font-family: "Mulish";
+    src: url("../fonts/#{$name}.woff2") format("woff2");
+    font-weight: $weigth;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@mixin flexibleFont($font) {
+  font-size: calc(100vw / $font * 10);
+}
+
+@mixin fontcalc($number) {
+  font-size: calc($number / 10px * 1rem);
+}
+
+@mixin desktop {
+  @media (max-width: (1440px)) {
+    @content;
+  }
+}
+@mixin small-desktop {
+  @media (max-width: (1024px)) {
+    @content;
+  }
+}
+@mixin large-tablet {
+  @media (max-width: (922px)) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: (768px)) {
+    @content;
+  }
+}
+@mixin large-phone {
+  @media (max-width: (576px)) {
+    @content;
+  }
+}
+@mixin phone {
+  @media (max-width: (420px)) {
+    @content;
+  }
+}
+@mixin mini-phone {
+  @media (max-width: (320px)) {
+    @content;
+  }
+}

@@ -1,0 +1,128 @@
+.articles {
+  position: relative;
+  padding-bottom: 200px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 100px;
+    left: -50px;
+    width: 132px;
+    height: 115px;
+    z-index: -1;
+    background: url('../content/BackgroundElements/dots_3.svg') 0 0 / 100% 100% no-repeat;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 80px;
+    right: -550px;
+    width: 786px;
+    height: 516px;
+    z-index: -1;
+    background: url('../content/BackgroundElements/blob_2.svg') 0 0 / 100% 100% no-repeat;
+  }
+
+  &__inner {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    @include fontcalc(36px);
+    font-weight: 700;
+    line-height: 155.556%;
+
+    @include phone {
+      text-align: center;
+    }
+  }
+
+  &__separator {}
+
+  &__cards {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    margin-bottom: 70px;
+
+    @include desktop {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__card {
+    max-width: 350px;
+    border-radius: 20px;
+    background: rgb(240, 240, 240);
+    box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.40);
+    transition: transform .3s;
+
+    &:hover {
+      transform: scale(102%);
+    }
+
+    &-content {
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 20px 35px 35px;
+    }
+
+    &-title {
+      @include fontcalc(21px);
+      font-weight: 700;
+      line-height: 152.321%;
+    }
+
+    &-text {
+      @include fontcalc(16px);
+      font-weight: 300;
+      line-height: 175%;
+      color: var(--font-second-color);
+    }
+
+    &-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      position: relative;
+      padding-right: 29px;
+      @include fontcalc(17px);
+      font-weight: 600;
+      line-height: 164.706%;
+      color: #4089ED;
+      transition: color .3s;
+
+      &::after {
+        content: '';
+        transform: translateY(2px);
+        width: 17px;
+        height: 17px;
+        background: url("../content/arrow-right.svg") 0 0 / 100% 100% no-repeat;
+      }
+
+      &:hover {
+        color: var(--font-accent-color);
+      }
+    }
+  }
+
+  &__img-box {
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__btn {}
+}
